@@ -1,0 +1,6 @@
+protected variable = _ single
+We can access it from outside the class.
+
+
+private variable  = __ double
+We cannot access it from outside the class.
