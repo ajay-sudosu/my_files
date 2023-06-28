@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quantum Computing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Quantum Computing</a>
+          </div>
+          <ul class="nav navbar-nav">
+            
+            <li><a href="about">About Us</a></li>
+            <li><a href="contacts">Contact Us</a></li>
+            <li><a href="register">Register With Us</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            
+            <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      {% block body %}
+      <div>
+        {% if user %}
+        <form action="delete" method="POST">
+          {% csrf_token %}
+            <input type="text" name="username" value="{{user.username}}">
+          Email : <input type="text" name="email" value="{{user.email}}"><br>
+          First name : <input type="text" name="first_name" value="{{user.first_name}}"><br>
+          <button type="submit" class="btn btn-primary"> Delete Profile </button>
+        </form>
+        
+          {% endif%}
+            
+      </div>
+      {% endblock %}
+  </body>
+</html>

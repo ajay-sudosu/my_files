@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quantum Computing</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Quantum Computation</a>
+          </div>
+          <ul class="nav navbar-nav">
+            
+            <li><a href="about">About Us</a></li>
+            <li><a href="contacts">Contact Us</a></li>
+            <li><a href="register">Register With Us</a></li>
+            <li><a href="edit">Edit</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            
+            <li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="jumbotron text-center" style="background-color: rgb(159, 168, 29);">
+      <div>
+          {% if user.is_authenticated %}
+          <h1>Welcome To The World of Computing {{user.username}}</h1>
+            <h2>{{user.first_name}} {{user.last_name}}</h2>  
+            <h2>Your Mail_id::{{user.email}}</h2>
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+          {% endif %}
+      </div>
+    </div>
+
+
+        <div class="jumbotron text-center">
+          <h1>Quantum Computing</h1>
+          <p>Quantum computers perform calculations based on the probability of an object's state before it is measured - instead of just 1s or 0s - which means they have the potential to process exponentially more data compared to classical computers.
+            Quantum computing is the use of quantum phenomena such as superposition and entanglement to perform computation. 
+          </p>
+        </div>
+
+        <style>
+          .jumbotron {
+            background-color: lightslategrey;
+            background-position: center;
+            color: rgb(2, 1, 10);
+            padding: 80px 20px;
+          }
+          
+          .container-fluid {
+            padding: 50px 45px;
+          }
+          </style>
+    
+</div>
+</body>
+</html>             

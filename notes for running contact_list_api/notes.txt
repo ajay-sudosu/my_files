@@ -1,0 +1,34 @@
+1. pip install pipenv
+2. pipenv shell (creates pipfile to track dependencies and activates virtual env automatically)
+3. Now start django project
+4. 	a. pipenv install django
+	b. pipenv install djangorestframework
+	c. pipenv install pyjwt
+5. outside project add .env and store secret key in that file
+6. add .gitignore and add env inside it so that it is not uploaded in git
+7. REST_FRAMEWORK = {'DEFAULT_AUTHENTICATION_CLASSES':['authentication.backend(#this is name of your file where Jwt class is 
+	present).JwtAuthentication',]}
+8. pipenv install drf-yasg
+9. settings.py add this --->
+	SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {"Auth Token eg [Bearer (JWT)]": {
+                "type":"apiKey",
+                "name":"Authorization",
+                "in":"header"}}}
+
+10. Make a repo in github
+	a. Upload project to github
+
+11. Deploying in heroku
+		a. pipenv install django-on-heroku
+		b. pipenv install gunicorn
+		c. Configure Django App for Heroku.
+			import django_on_heroku
+			django_on_heroku.settings(locals())
+		d. Add a Procfile in root directory
+			a. add this is Procfile 
+				release	: python manage.py makemigrations --no-input
+				release	: python manage.py make --no-input
+				web : gunicorn contact_list_api.wsgi.py
+
+11. Go to heroku and connect your repo and branch and deploy.
